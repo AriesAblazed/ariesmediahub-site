@@ -229,11 +229,21 @@ img {
   max-width: 760px;
 }
 
+.hero-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
 .hero-logo {
-  width: 220px;
+  width: 260px;
   height: auto;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 40px rgba(192,57,43,0.35));
+  margin-bottom: 0.25rem;
+  filter: drop-shadow(0 0 50px rgba(192,57,43,0.55)) drop-shadow(0 0 20px rgba(192,57,43,0.3));
 }
 
 .hero-tagline {
@@ -761,4 +771,65 @@ section:nth-child(even) {
   .work-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ═══════════════════════════════════════════
+   GALLERY FILTERS
+═══════════════════════════════════════════ */
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* ── Work card images ── */
+.work-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.04);
+}
+
+.work-category {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
 }

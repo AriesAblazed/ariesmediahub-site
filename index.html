@@ -55,7 +55,8 @@
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <img src="assets/images/logo-full.png" alt="Aries Media Hub Logo" class="hero-logo" data-aos="fade-down" data-aos-duration="1000" />
+      <p class="hero-wordmark" data-aos="fade-down" data-aos-duration="1000">Aries Media Hub</p>
+      <img src="assets/images/logo-full.png" alt="Aries Media Hub Logo" class="hero-logo" data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000" />
       <p class="hero-tagline" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
         Brand Identity &amp; Design that Commands Attention
       </p>
@@ -128,40 +129,22 @@
         <div class="title-rule"></div>
       </div>
 
-      <div class="work-grid">
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="0">
-          <div class="work-overlay">
-            <span>Brand Identity</span>
-          </div>
-        </div>
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="100">
-          <div class="work-overlay">
-            <span>Logo Design</span>
-          </div>
-        </div>
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="200">
-          <div class="work-overlay">
-            <span>Social Media</span>
-          </div>
-        </div>
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="300">
-          <div class="work-overlay">
-            <span>Print Design</span>
-          </div>
-        </div>
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="400">
-          <div class="work-overlay">
-            <span>Google Ads</span>
-          </div>
-        </div>
-        <div class="work-card placeholder" data-aos="fade-up" data-aos-delay="500">
-          <div class="work-overlay">
-            <span>Meta Ads</span>
-          </div>
-        </div>
+      <div class="work-filters" id="workFilters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Brand Identity">Brand Identity</button>
+        <button class="filter-btn" data-filter="Logo Design">Logo Design</button>
+        <button class="filter-btn" data-filter="Print Design">Print Design</button>
+        <button class="filter-btn" data-filter="Social Media Assets">Social Media</button>
+        <button class="filter-btn" data-filter="Google Ads Creative">Google Ads</button>
+        <button class="filter-btn" data-filter="Meta Ads Creative">Meta Ads</button>
       </div>
 
-      <p class="work-note" data-aos="fade-up">Portfolio pieces added as projects are completed.</p>
+      <div class="work-grid" id="workGrid">
+        <!-- Populated by js/gallery.js from data/work.json -->
+      </div>
+
+      <p class="work-note" id="workEmpty" style="display:none;" data-aos="fade-up">No pieces in this category yet.</p>
+      <p class="work-note" id="workPlaceholder" data-aos="fade-up">Portfolio pieces added as projects are completed.</p>
     </div>
   </section>
 
@@ -202,7 +185,7 @@
       </div>
 
       <div class="contact-wrap" data-aos="fade-up" data-aos-delay="200">
-        <form name="contact" method="POST" netlify action="/success.html" class="contact-form">
+        <form name="contact" method="POST" data-netlify="true" action="/success.html" class="contact-form">
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
 
@@ -257,6 +240,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
